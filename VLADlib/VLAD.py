@@ -24,7 +24,7 @@ def getDescriptors(path,functionHandleDescriptor):
         print(imagePath)
         im=cv2.imread(imagePath)
         kp,des = functionHandleDescriptor(im)
-        if des!=None:
+        if len(des)!=0:
             descriptors.append(des)
             print(len(kp))
         
@@ -61,7 +61,7 @@ def getVLADDescriptors(path,functionHandleDescriptor,visualDictionary):
         print(imagePath)
         im=cv2.imread(imagePath)
         kp,des = functionHandleDescriptor(im)
-        if des!=None:
+        if len(des)!=0:
             v=VLAD(des,visualDictionary)
             descriptors.append(v)
             idImage.append(imagePath)
@@ -235,12 +235,12 @@ def improvedVLAD(X,visualDictionary):
     return V
 
 def indexBallTree(X,leafSize):
-    tree = BallTree(X, leaf_size=leafSize)              
+    tree = BallTree(X, leaf_size=leafSize)
     return tree
 
 #typeDescriptors =SURF, SIFT, OEB
 #k = number of images to be retrieved
-def query(image, k,descriptorName, visualDictionary,tree):
+def query(image, k, descriptorName, visualDictionary, tree):
     #read image
     im=cv2.imread(image)
     #compute descriptors
@@ -258,9 +258,16 @@ def query(image, k,descriptorName, visualDictionary,tree):
 
 
 
+if __name__ == '__main__':
+    # functionHandleDescriptor={describeSURF, describeSIFT, describeORB}
+    path = '/home/kenneth/gitstore/datafolder/CompanyStandardLabel'
+    a = getDescriptors(path,describeSURF)
+    res = kMeansDictionary(a, 20)
+#    descriptor = improvedVLAD(X,visualDictionary)
+    print( res )
 
-
-
+    x = getVLADDescriptors(path,describeSURF,res)
+    print(x)
 	
 
 
