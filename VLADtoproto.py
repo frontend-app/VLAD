@@ -47,9 +47,6 @@ def getDescriptors(src_image_feature_path):
     # descriptors = list(itertools.chain.from_iterable(descriptors))
     #list to array
 
-
-
-# input
 # training = a set of descriptors
 def  kMeansDictionary(training, k, save_path):
 
