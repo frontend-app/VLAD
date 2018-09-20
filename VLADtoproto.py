@@ -67,7 +67,7 @@ def save_VLAD_to_proto(src_image_feature_path, visualDictionary):
 
     descriptors_dict=dict()
 
-    for key in path_dict.keys()[0:100]:
+    for key in path_dict.keys():
         one_image_feature_path = path_dict[key]
         _, _, img_des = rwOperation.read_feature(one_image_feature_path)
         v=VLAD.VLAD(img_des,visualDictionary)
@@ -85,14 +85,16 @@ if __name__ == '__main__':
     #test1
     path = '../datafolder/test'
     train_feature = getDescriptors(path)
-    kMeansDictionary(train_feature, 10, path)
+    kMeansDictionary(train_feature, 100, path)
+    print( 'cluster finished!')
     res = read_kmean_result(path)
 
     save_VLAD_to_proto(path, res)
-    load_VLAD_from_proto(os.path.join(path, 'descriptors_dict.vlad'))
+    print( 'save vlad feature finished!')
+    des_dict = load_VLAD_from_proto(os.path.join(path, 'descriptors_dict.vlad'))
+
+
     ##cluster result save and load example
     #joblib.dump( res, 'surf_cluster.pkl')
     #km = joblib.load('surf_cluster.pkl')
-
-    print(0)
 
