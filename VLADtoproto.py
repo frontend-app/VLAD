@@ -83,7 +83,7 @@ def load_VLAD_from_proto(descriptor_dict_path):
 if __name__ == '__main__':
 
     #test1
-    path = '../datafolder/test'
+    path = '../datafolder/test2'
     train_feature = getDescriptors(path)
     kMeansDictionary(train_feature, 100, path)
     print( 'cluster finished!')

@@ -12,6 +12,7 @@ message KeyPoint{
     optional point pt = 6;
     optional float response = 4;
     optional float size = 5;
+    optional string kp_name = 7;
 }
 
 message Descriptors{
@@ -20,6 +21,7 @@ message Descriptors{
     }
     optional shape dim = 1;
     repeated float element = 2 [packed=true];
+    optional string des_name = 3;
 }
 
 message OneFeature{

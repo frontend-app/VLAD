@@ -18,7 +18,7 @@ _sym_db = _symbol_database.Default()
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='readwriteOperation.proto',
   package='RWoperation',
-  serialized_pb=_b('\n\x18readwriteOperation.proto\x12\x0bRWoperation\"\xa3\x01\n\x08KeyPoint\x12\r\n\x05\x61ngle\x18\x01 \x01(\x02\x12\x10\n\x08\x63lass_id\x18\x02 \x01(\x05\x12\x0e\n\x06octave\x18\x03 \x01(\x05\x12\'\n\x02pt\x18\x06 \x01(\x0b\x32\x1b.RWoperation.KeyPoint.point\x12\x10\n\x08response\x18\x04 \x01(\x02\x12\x0c\n\x04size\x18\x05 \x01(\x02\x1a\x1d\n\x05point\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\"f\n\x0b\x44\x65scriptors\x12+\n\x03\x64im\x18\x01 \x01(\x0b\x32\x1e.RWoperation.Descriptors.shape\x12\x13\n\x07\x65lement\x18\x02 \x03(\x02\x42\x02\x10\x01\x1a\x15\n\x05shape\x12\x0c\n\x04\x65lem\x18\x01 \x03(\x05\"e\n\nOneFeature\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\"\n\x03kps\x18\x02 \x03(\x0b\x32\x15.RWoperation.KeyPoint\x12%\n\x03\x64\x65s\x18\x03 \x01(\x0b\x32\x18.RWoperation.Descriptors\"A\n\x07\x46\x65\x61ture\x12\x0c\n\x04name\x18\x01 \x01(\t\x12(\n\x07\x66\x65\x61ture\x18\x02 \x03(\x0b\x32\x17.RWoperation.OneFeature\"(\n\nStringDict\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"6\n\x08PathDict\x12*\n\tpath_dict\x18\x01 \x03(\x0b\x32\x17.RWoperation.StringDict')
+  serialized_pb=_b('\n\x18readwriteOperation.proto\x12\x0bRWoperation\"\xb4\x01\n\x08KeyPoint\x12\r\n\x05\x61ngle\x18\x01 \x01(\x02\x12\x10\n\x08\x63lass_id\x18\x02 \x01(\x05\x12\x0e\n\x06octave\x18\x03 \x01(\x05\x12\'\n\x02pt\x18\x06 \x01(\x0b\x32\x1b.RWoperation.KeyPoint.point\x12\x10\n\x08response\x18\x04 \x01(\x02\x12\x0c\n\x04size\x18\x05 \x01(\x02\x12\x0f\n\x07kp_name\x18\x07 \x01(\t\x1a\x1d\n\x05point\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\"x\n\x0b\x44\x65scriptors\x12+\n\x03\x64im\x18\x01 \x01(\x0b\x32\x1e.RWoperation.Descriptors.shape\x12\x13\n\x07\x65lement\x18\x02 \x03(\x02\x42\x02\x10\x01\x12\x10\n\x08\x64\x65s_name\x18\x03 \x01(\t\x1a\x15\n\x05shape\x12\x0c\n\x04\x65lem\x18\x01 \x03(\x05\"e\n\nOneFeature\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\"\n\x03kps\x18\x02 \x03(\x0b\x32\x15.RWoperation.KeyPoint\x12%\n\x03\x64\x65s\x18\x03 \x01(\x0b\x32\x18.RWoperation.Descriptors\"A\n\x07\x46\x65\x61ture\x12\x0c\n\x04name\x18\x01 \x01(\t\x12(\n\x07\x66\x65\x61ture\x18\x02 \x03(\x0b\x32\x17.RWoperation.OneFeature\"(\n\nStringDict\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"6\n\x08PathDict\x12*\n\tpath_dict\x18\x01 \x03(\x0b\x32\x17.RWoperation.StringDict')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -57,8 +57,8 @@ _KEYPOINT_POINT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=176,
-  serialized_end=205,
+  serialized_start=193,
+  serialized_end=222,
 )
 
 _KEYPOINT = _descriptor.Descriptor(
@@ -110,6 +110,13 @@ _KEYPOINT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='kp_name', full_name='RWoperation.KeyPoint.kp_name', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -122,7 +129,7 @@ _KEYPOINT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=42,
-  serialized_end=205,
+  serialized_end=222,
 )
 
 
@@ -151,8 +158,8 @@ _DESCRIPTORS_SHAPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=288,
-  serialized_end=309,
+  serialized_start=323,
+  serialized_end=344,
 )
 
 _DESCRIPTORS = _descriptor.Descriptor(
@@ -176,6 +183,13 @@ _DESCRIPTORS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
+    _descriptor.FieldDescriptor(
+      name='des_name', full_name='RWoperation.Descriptors.des_name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -187,8 +201,8 @@ _DESCRIPTORS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=207,
-  serialized_end=309,
+  serialized_start=224,
+  serialized_end=344,
 )
 
 
@@ -231,8 +245,8 @@ _ONEFEATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=311,
-  serialized_end=412,
+  serialized_start=346,
+  serialized_end=447,
 )
 
 
@@ -268,8 +282,8 @@ _FEATURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=414,
-  serialized_end=479,
+  serialized_start=449,
+  serialized_end=514,
 )
 
 
@@ -305,8 +319,8 @@ _STRINGDICT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=481,
-  serialized_end=521,
+  serialized_start=516,
+  serialized_end=556,
 )
 
 
@@ -335,8 +349,8 @@ _PATHDICT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=523,
-  serialized_end=577,
+  serialized_start=558,
+  serialized_end=612,
 )
 
 _KEYPOINT_POINT.containing_type = _KEYPOINT
